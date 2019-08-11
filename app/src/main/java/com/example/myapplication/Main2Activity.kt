@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main2.*
 
@@ -12,10 +11,10 @@ class Main2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         val bundle: Bundle? = intent.extras
-        val msg = bundle!!.getString("msg")
+        val msg = bundle!!.getString(Constants.USER_MSG_KEY)
 
 
         textView.text = msg
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        popUP(msg!!)
     }
 }

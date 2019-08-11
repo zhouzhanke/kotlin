@@ -5,7 +5,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.list_item.view.*
 
@@ -30,7 +29,7 @@ class adapter(var context: Context, var hobbies: List<Hobby>) : RecyclerView.Ada
 
         init {
             itemView.setOnClickListener {
-                Toast.makeText(context, current_hobby!!.title + " clicked.", Toast.LENGTH_SHORT).show()
+                context.popUP(current_hobby!!.title + " clicked.")
             }
 
             itemView.img_row.setOnClickListener {
@@ -47,7 +46,6 @@ class adapter(var context: Context, var hobbies: List<Hobby>) : RecyclerView.Ada
         }
 
         fun setData(hobby: Hobby?, pos: Int) {
-//            itemView.txvTitle.text = hobby!!.title
             itemView.text_row.text = hobby!!.title
 
             this.current_hobby = hobby
