@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="button_click">button 1 was clicked</string>
+    <string name="pop_up_msg">pop up</string>
 </resources>
