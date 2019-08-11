@@ -1,10 +1,10 @@
 package com.example.myapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,11 +15,12 @@ class MainActivity : AppCompatActivity() {
 
         button1.setOnClickListener {
             Log.i("MainActibity", "button 1 is clicked")
+            Toast.makeText(this, "button 1 is clicked", Toast.LENGTH_SHORT).show()
         }
 
         button2.setOnClickListener {
+            Log.i("MainActibity", "button 2 is clicked")
             var msg: String = editText.text.toString()
-            Log.i("MainActibity", "button 1 is clicked")
 
             val intent = Intent(this, Main2Activity::class.java)
 
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         button3.setOnClickListener {
+            Log.i("MainActibity", "button 3 is clicked")
             var msg: String = editText.text.toString()
 
             val intent = Intent()
@@ -37,6 +39,13 @@ class MainActivity : AppCompatActivity() {
             intent.type = "text/plan"
 
             startActivity(Intent.createChooser(intent, "share to : "))
+        }
+
+        button4.setOnClickListener {
+            Log.i("MainActibity", "button 4 is clicked")
+
+            val intent = Intent(this, Main3Activity::class.java)
+            startActivity(intent)
         }
     }
 }
